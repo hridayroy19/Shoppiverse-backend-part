@@ -19,6 +19,10 @@ const userSchema = new Schema<IUser>({
       message: '{VALUE} is not a valid email',
     },
   },
+  password: {
+    type: String,
+    required: [true, 'Please provide Password'],
+  },
   role: {
     type: String,
     enum: {
@@ -27,6 +31,18 @@ const userSchema = new Schema<IUser>({
     },
     default: 'user',
     required: true,
+  },
+  photo: {
+    type: String,
+    default: "",
+  },
+  address: {
+    type: String,
+    default: "",
+  },
+  wishlist: {
+    type: [String],
+    default: []
   },
   userStatus: {
     type: String,
